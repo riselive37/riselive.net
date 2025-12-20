@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works - RiseLive</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="js/cms.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <style>
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--text-main);
+            color: #fff;
+            border-color: var(--text-main);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="RiseLive" class="logo-img"></a>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Top</a></li>
+                    <li><a href="works.html" class="nav-link active">Works</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="news.html" class="nav-link">News</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-lg">
+        <div class="container">
+            <h1 class="section-title fade-in-up">Works</h1>
+            <p class="text-center text-muted fade-in-up" style="margin-bottom: 3rem;">制作実績一覧</p>
+
+            <div class="filter-buttons fade-in-up">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Web</button>
+                <button class="filter-btn">DTP</button>
+                <button class="filter-btn">Other</button>
+            </div>
+
+            <div class="works-grid" id="worksGrid">
+                <!-- Static Placeholders simulating microCMS content -->
+                <article class="work-card fade-in-up">
+                    <div class="work-image-placeholder"></div>
+                    <div class="work-info">
+                        <span class="work-cat">Web Design</span>
+                        <h3>Beauty Salon Website</h3>
+                        <p class="work-date">2024.03</p>
+                    </div>
+                </article>
+                <article class="work-card fade-in-up">
+                    <div class="work-image-placeholder"></div>
+                    <div class="work-info">
+                        <span class="work-cat">LP</span>
+                        <h3>SaaS Product Landing Page</h3>
+                        <p class="work-date">2024.02</p>
+                    </div>
+                </article>
+                <article class="work-card fade-in-up">
+                    <div class="work-image-placeholder"></div>
+                    <div class="work-info">
+                        <span class="work-cat">DTP</span>
+                        <h3>Exhibition Flyer</h3>
+                        <p class="work-date">2024.01</p>
+                    </div>
+                </article>
+                <article class="work-card fade-in-up">
+                    <div class="work-image-placeholder"></div>
+                    <div class="work-info">
+                        <span class="work-cat">Web Design</span>
+                        <h3>Recruit Site</h3>
+                        <p class="work-date">2023.12</p>
+                    </div>
+                </article>
+                <article class="work-card fade-in-up">
+                    <div class="work-image-placeholder"></div>
+                    <div class="work-info">
+                        <span class="work-cat">Other</span>
+                        <h3>Logo Design</h3>
+                        <p class="work-date">2023.11</p>
+                    </div>
+                </article>
+                <article class="work-card fade-in-up">
+                    <div class="work-image-placeholder"></div>
+                    <div class="work-info">
+                        <span class="work-cat">Marketing</span>
+                        <h3>SEO Reports</h3>
+                        <p class="work-date">2023.10</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo"><img src="images/logo.png" alt="RiseLive"></div><div class="footer-links">
+                    <a href="index.html">Top</a>
+                    <a href="works.html">Works</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="news.html">News</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <p class="copyright">&copy; 2024 RiseLive. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
