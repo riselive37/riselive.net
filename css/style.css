@@ -704,8 +704,20 @@ textarea.form-control {
 
 /* Adjust Mobile Menu Button Position */
 @media screen and (max-width: 768px) {
+
+    /* Use flexbox alignment for better Safari compatibility */
     .menu-toggle {
         margin-left: auto;
         /* Push to the right */
+        position: static;
+        /* Remove potential absolute positioning */
+        transform: none;
+        /* Remove centering transform */
+    }
+
+    /* Ensure nav wrapper doesn't take up space in the flex container */
+    .header-inner nav {
+        width: 0;
+        overflow: hidden;
     }
 }
