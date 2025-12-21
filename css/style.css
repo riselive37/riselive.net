@@ -653,6 +653,52 @@ textarea.form-control {
     border-radius: 8px;
 }
 
+/* News Detail Body Styling */
+.news-body {
+    font-size: var(--text-base);
+    line-height: 1.8;
+}
+
+.news-body p {
+    margin-bottom: 1.5em;
+    /* Restore margin for paragraphs */
+    white-space: pre-wrap;
+    /* Ensure line breaks in plain text or text areas are respected */
+}
+
+/* Headings in news content */
+.news-body h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.news-body h3 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Lists in news content */
+.news-body ul,
+.news-body ol {
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+    list-style: disc;
+    /* Restore list markers */
+}
+
+.news-body ol {
+    list-style: decimal;
+}
+
+.news-body img {
+    margin: 2rem auto;
+    border-radius: 4px;
+}
+
 /* Footer Styles */
 .footer {
     padding: var(--spacing-xl) 0;
