@@ -17,7 +17,7 @@ const fetchFromCMS = async (endpoint, limit = 10, filters = '') => {
     }
 
     const url = new URL(`https://${CMS_CONFIG.serviceDomain}.microcms.io/api/v1/${endpoint}`);
-    url.searchParams.append('limit', limit);
+    if (limit) url.searchParams.append('limit', limit);
     if (filters) url.searchParams.append('filters', filters);
 
     try {
@@ -25,6 +25,21 @@ const fetchFromCMS = async (endpoint, limit = 10, filters = '') => {
             headers: {
                 'X-MICROCMS-API-KEY': CMS_CONFIG.apiKey,
             },
+        });
+        if (!response.ok) throw new Error(`API Error: ${response.status}`);
+        return await response.json();
+    } catch (error) {
+        console.error('Fetch error:', error);
+        return null;
+    }
+};
+
+const fetchSingleFromCMS = async (endpoint, contentId) => {
+    if (CMS_CONFIG.serviceDomain === 'YOUR_SERVICE_DOMAIN') return null;
+    const url = `https://${CMS_CONFIG.serviceDomain}.microcms.io/api/v1/${endpoint}/${contentId}`;
+    try {
+        const response = await fetch(url, {
+            headers: { 'X-MICROCMS-API-KEY': CMS_CONFIG.apiKey },
         });
         if (!response.ok) throw new Error(`API Error: ${response.status}`);
         return await response.json();
@@ -170,13 +185,126 @@ const renderWorks = (contents, containerId) => {
 // Store works data globally for filtering
 let allWorksData = [];
 
+// Demo Data map for static fallback
+const DEMO_NEWS = {
+    'demo_renewal': {
+        title: 'Webサイトをリニューアルしました。今後実績を更新していきます。',
+        date: '2024.05.01',
+        category: 'Info',
+        content: '<p>日頃よりRiseliveをご愛顧いただき、誠にありがとうございます。</p><p>この度、Webサイトを全面的にリニューアルいたしました。</p><p>今回のリニューアルでは、皆様により分かりやすく情報をお伝えすることを目指し、デザインや構成を一新いたしました。</p><p>引き続き、コンテンツの充実を図り、より良いサイト運営を目指してまいりますので、今後とも何卒よろしくお願い申し上げます。</p>'
+    },
+    'demo_work1': {
+        title: '新規制作実績を公開しました（株式会社〇〇様 コーポレートサイト）',
+        date: '2024.04.15',
+        category: 'Work',
+        content: '<p>株式会社〇〇様のコーポレートサイトを制作いたしました。</p><p>「信頼感」と「革新性」をテーマに、企業カラーであるブルーを基調としたクリーンなデザインに仕上げました。</p><p>レスポンシブ対応はもちろん、CMS導入によりお客様自身でのお知らせ更新も可能となっております。</p>'
+    },
+    'demo_work2': {
+        title: '新規制作実績を公開しました（株式会社△△様 LP）',
+        date: '2024.04.10',
+        category: 'Work',
+        content: '<p>新商品発売に伴うランディングページ（LP）の制作を担当いたしました。</p><p>ターゲット層に響く訴求ポイントを整理し、CV（コンバージョン）への導線を意識した構成となっております。</p><p>ファーストビューでのインパクトを重視し、ストーリー性のあるデザインを展開しました。</p>'
+    },
+    'demo_column': {
+        title: '【コラム】最近のWebデザインのトレンドについて',
+        date: '2024.04.05',
+        category: 'Blog',
+        content: '<p>2024年のWebデザインのトレンドについてご紹介します。</p><h3>1. Bento Grids</h3><p>お弁当箱のようにコンテンツをグリッド状に配置するレイアウトが人気です。</p><h3>2. マイクロインタラクション</h3><p>ボタンを押した時の動きや、スクロール時のアニメーションなど、細かな動きがユーザー体験を向上させます。</p><p>Webデザインは日々進化していますが、本質は「ユーザーにとって使いやすいか」です。トレンドを取り入れつつも、見やすさを損なわないデザインを心がけています。</p>'
+    },
+    'demo_start': {
+        title: 'フリーランスとしての活動を本格的に開始しました。',
+        date: '2024.04.01',
+        category: 'Info',
+        content: '<p>この度、フリーランスのWebディレクター/デザイナーとして本格的に活動を開始いたしました。</p><p>これまでの経験を活かし、お客様のビジネス課題を解決するWebサイト制作を行ってまいります。</p><p>お仕事のご相談やご質問など、お気軽にお問い合わせください。</p>'
+    }
+
+};
+
+const renderNewsDetailContent = (id, data) => {
+    const detailContainer = document.getElementById('newsDetail');
+    const listContainer = document.getElementById('newsList');
+    const pagination = document.querySelector('nav[aria-label="Page navigation"]')?.parentElement; // Hide pagination
+
+    if (!detailContainer) return;
+
+    let title, date, category, content;
+
+    if (data) {
+        // API Data
+        title = data.title;
+        date = formatDate(data.publishedAt);
+        category = data.category ? data.category.name : 'Info';
+        content = data.content || data.body || ''; // content or body depending on CMS schema
+    } else if (DEMO_NEWS[id]) {
+        // Demo Data
+        const d = DEMO_NEWS[id];
+        title = d.title;
+        date = d.date;
+        category = d.category;
+        content = d.content;
+    } else {
+        // Not found
+        detailContainer.innerHTML = '<p>記事が見つかりませんでした。</p><div class="text-center mt-5"><a href="news.html" class="btn btn-outline">一覧に戻る</a></div>';
+        listContainer.style.display = 'none';
+        detailContainer.style.display = 'block';
+        if (pagination) pagination.style.display = 'none';
+        return;
+    }
+
+    detailContainer.innerHTML = `
+        <article class="news-detail-content fade-in-up visible">
+            <header class="news-header" style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 2rem;">
+                <div class="news-meta" style="margin-bottom: 1rem; color: #888;">
+                    <time style="margin-right: 1rem;">${date}</time>
+                    <span class="news-tag">${category}</span>
+                </div>
+                <h1 style="font-size: 2rem; line-height: 1.4;">${title}</h1>
+            </header>
+            <div class="news-body" style="line-height: 1.8; margin-bottom: 4rem;">
+                ${content}
+            </div>
+            <div class="text-center">
+                <a href="news.html" class="btn btn-outline">一覧に戻る</a>
+            </div>
+        </article>
+    `;
+
+    // Switch view
+    if (listContainer) listContainer.style.display = 'none';
+    if (pagination) pagination.style.display = 'none';
+    detailContainer.style.display = 'block';
+    
+    // Smooth scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 // Auto-run on page load
 document.addEventListener('DOMContentLoaded', async () => {
-    // Check if we are on a page that needs news list
+    
+    // Check for News Detail ID first
+    const urlParams = new URLSearchParams(window.location.search);
+    const newsId = urlParams.get('id');
     const newsList = document.getElementById('newsList');
-    if (newsList && CMS_CONFIG.serviceDomain !== 'YOUR_SERVICE_DOMAIN') {
-        const data = await fetchFromCMS('news', 5);
-        if (data) renderNews(data.contents, 'newsList');
+
+    if (newsId && document.getElementById('newsDetail')) {
+        // We are in detail mode
+        // Try to fetch from API first if it looks like an API ID (not starting with demo_)
+        if (!newsId.startsWith('demo_') && CMS_CONFIG.serviceDomain !== 'YOUR_SERVICE_DOMAIN') {
+            const data = await fetchSingleFromCMS('news', newsId);
+            renderNewsDetailContent(newsId, data);
+        } else {
+            // Render Demo Content
+            renderNewsDetailContent(newsId, null);
+        }
+    } else {
+        // List Mode
+        if (newsList && CMS_CONFIG.serviceDomain !== 'YOUR_SERVICE_DOMAIN') {
+            const data = await fetchFromCMS('news', 5);
+            if (data && data.contents && data.contents.length > 0) {
+                 renderNews(data.contents, 'newsList');
+            }
+            // If no data or fetch failed, static HTML placeholders remain visible
+        }
     }
 
     // Check if we are on a page that needs works list
