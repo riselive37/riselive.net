@@ -990,6 +990,12 @@ textarea.form-control {
     display: block;
     margin-bottom: var(--spacing-sm);
     color: var(--text-main);
+    transition: color 0.2s;
+}
+
+.footer-email:hover {
+    color: var(--brand-color);
+    text-decoration: underline;
 }
 
 .footer-line-link {
