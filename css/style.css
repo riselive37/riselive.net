@@ -501,19 +501,69 @@ textarea.form-control {
     }
 }
 
+/* Responsive Break Utility */
+.sp-br {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .sp-br {
+        display: none;
+    }
+}
+
 .hero-sub {
-    font-size: var(--text-sm);
+    font-size: 0.75rem;
     color: var(--text-muted);
     letter-spacing: 0.1em;
     margin-bottom: var(--spacing-sm);
     text-transform: uppercase;
 }
 
+/* Mobile First - Base (Targeting ~320px) */
+.hero-title {
+    font-size: 1.75rem;
+    /* Smaller for 320px width */
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.05em;
+}
+
 .hero-desc {
-    font-size: var(--text-base);
+    font-size: 0.875rem;
+    /* Smaller for 320px width */
     color: var(--text-muted);
     margin-bottom: var(--spacing-lg);
-    line-height: 1.8;
+    line-height: 1.7;
+    text-align: left;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* Larger Mobile (Targeting 375px+) */
+@media (min-width: 375px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-desc {
+        font-size: 1rem;
+    }
+
+    .hero-sub {
+        font-size: var(--text-sm);
+    }
+}
+
+/* Desktop / Tablet */
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3.5rem;
+        line-height: 1.4;
+    }
 }
 
 .work-info {
