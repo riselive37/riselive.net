@@ -273,14 +273,14 @@ const renderNewsDetailContent = (id, data) => {
     if (listContainer) listContainer.style.display = 'none';
     if (pagination) pagination.style.display = 'none';
     detailContainer.style.display = 'block';
-    
+
     // Smooth scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 // Auto-run on page load
 document.addEventListener('DOMContentLoaded', async () => {
-    
+
     // Check for News Detail ID first
     const urlParams = new URLSearchParams(window.location.search);
     const newsId = urlParams.get('id');
@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (newsList && CMS_CONFIG.serviceDomain !== 'YOUR_SERVICE_DOMAIN') {
             const data = await fetchFromCMS('news', 5);
             if (data && data.contents && data.contents.length > 0) {
-                 renderNews(data.contents, 'newsList');
+                renderNews(data.contents, 'newsList');
             }
             // If no data or fetch failed, static HTML placeholders remain visible
         }
@@ -324,6 +324,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
     }
+
+    // Initialize Client-side Pagination for News List
+    // This ensures pagination only appears if items exceed the limit (default 10)
+    initPagination('newsList', 10);
 });
 
 const initWorkFilters = () => {
@@ -351,4 +355,95 @@ const initWorkFilters = () => {
             }
         });
     });
+};
+
+/**
+ * Client-side Pagination Utility
+ * Automatically paginates a list of items if they exceed the perPage limit.
+ */
+const initPagination = (containerId, perPage = 10) => {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    // Get all news items
+    const items = Array.from(container.querySelectorAll('.news-item'));
+    if (items.length <= perPage) return;
+
+    // Create Pagination Container
+    const paginationNav = document.createElement('nav');
+    paginationNav.className = 'pagination-container text-center fade-in-up visible';
+    paginationNav.style.marginTop = '3rem';
+    paginationNav.setAttribute('aria-label', 'Page navigation');
+
+    const ul = document.createElement('ul');
+    ul.style.display = 'flex';
+    ul.style.justifyContent = 'center';
+    ul.style.gap = '10px';
+    paginationNav.appendChild(ul);
+
+    // Insert after container
+    container.parentNode.insertBefore(paginationNav, container.nextSibling);
+
+    const totalPages = Math.ceil(items.length / perPage);
+    let currentPage = 1;
+
+    const showPage = (page) => {
+        currentPage = page;
+        const start = (page - 1) * perPage;
+        const end = page * perPage;
+
+        items.forEach((item, idx) => {
+            if (idx >= start && idx < end) {
+                item.style.display = 'flex';
+                item.classList.add('visible');
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        renderControls();
+    };
+
+    const renderControls = () => {
+        ul.innerHTML = '';
+        for (let i = 1; i <= totalPages; i++) {
+            const li = document.createElement('li');
+            const btn = document.createElement('a');
+            btn.href = '#';
+            btn.textContent = i;
+            btn.style.display = 'block';
+            btn.style.padding = '8px 16px';
+            btn.style.border = i === currentPage ? '1px solid #333' : '1px solid #ddd';
+            btn.style.background = i === currentPage ? '#333' : '#fff';
+            btn.style.color = i === currentPage ? '#fff' : '#333';
+            btn.style.borderRadius = '4px';
+            btn.style.textDecoration = 'none';
+            btn.style.transition = 'all 0.2s';
+
+            if (i !== currentPage) {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showPage(i);
+                    // Smooth scroll to top of list
+                    const rect = container.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset + rect.top - 120;
+                    window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+                });
+                btn.addEventListener('mouseenter', () => {
+                    btn.style.background = '#f4f4f4';
+                });
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.background = '#fff';
+                });
+            } else {
+                btn.style.pointerEvents = 'none';
+            }
+
+            li.appendChild(btn);
+            ul.appendChild(li);
+        }
+    };
+
+    // Initialize
+    showPage(1);
 };
