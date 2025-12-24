@@ -481,6 +481,39 @@ textarea.form-control {
 /* Add a subtle gradient to Hero */
 .hero-section {
     background: linear-gradient(180deg, rgba(235, 110, 160, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: 0.05em;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3.5rem;
+        line-height: 1.4;
+    }
+}
+
+.hero-sub {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+}
+
+.hero-desc {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
 }
 
 .work-info {
