@@ -736,6 +736,13 @@ textarea.form-control {
     border-radius: 8px;
 }
 
+.cta-text {
+    font-size: var(--text-base);
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
 /* News Detail Body Styling */
 .news-body {
     font-size: var(--text-base);
@@ -1040,6 +1047,23 @@ textarea.form-control {
     display: flex;
     flex-direction: column;
     border-top: 1px solid var(--border-color);
+}
+
+/* Responsive Text Center with Left Alignment for Readability */
+.text-responsive-center {
+    text-align: left;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.pricing-philosophy p.cta-text {
+    font-size: 0.95rem;
+    /* Slightly smaller to match perception */
+    line-height: 1.7;
+    /* Slightly tighter */
+    margin-bottom: 2rem;
 }
 
 .news-item {
