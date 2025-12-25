@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works | Rise（ライズ）</title>
+    <meta name="description" content="Rise（ライズ）の制作実績一覧です。Webサイト制作、LP制作、SNS運用、グラフィックデザインなど、これまでの実績をご覧いただけます。">
+    <link rel="icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    <link rel="stylesheet" href="../css/style.css?v=20241221_02">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="../js/cms.js" defer></script>
+    <script src="../js/main.js?v=20241221_02" defer></script>
+    <style>
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--text-main);
+            color: #fff;
+            border-color: var(--text-main);
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHMC1N46T3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DHMC1N46T3');
+    </script>
+</head>
+
+<body>
+
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="../" class="logo"><img src="../images/logo.png" alt="Rise（ライズ）" class="logo-img"></a>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../" class="nav-link">Top</a></li>
+                    <li><a href="../about/" class="nav-link">About</a></li>
+                    <li><a href="./" class="nav-link active">Works</a></li>
+                    <li><a href="../pricing/" class="nav-link">Pricing</a></li>
+                    <li><a href="../news/" class="nav-link">News</a></li>
+                    <li><a href="../contact/" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-lg">
+        <div class="container">
+            <h1 class="section-title fade-in-up">Works</h1>
+            <p class="text-center text-muted fade-in-up" style="margin-bottom: 3rem;">制作実績一覧</p>
+
+            <div class="filter-buttons fade-in-up">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Web</button>
+                <button class="filter-btn">DTP</button>
+                <button class="filter-btn">Other</button>
+            </div>
+
+            <div class="works-grid" id="worksGrid">
+                <!-- Static Placeholders simulating microCMS content -->
+                <article class="work-card fade-in-up">
+                    <div class="work-image-placeholder"></div>
+                    <div class="work-info">
+                        <span class="work-cat">Web Design</span>
+                        <h3>Beauty Salon Website</h3>
+                        <p class="work-date">2024.03</p>
+                    </div>
+                </article>
+                <article class="work-card fade-in-up">
+                    <div class="work-image-placeholder"></div>
+                    <div class="work-info">
+                        <span class="work-cat">LP</span>
+                        <h3>SaaS Product Landing Page</h3>
+                        <p class="work-date">2024.02</p>
+                    </div>
+                </article>
+                <article class="work-card fade-in-up">
+                    <div class="work-image-placeholder"></div>
+                    <div class="work-info">
+                        <span class="work-cat">DTP</span>
+                        <h3>Exhibition Flyer</h3>
+                        <p class="work-date">2024.01</p>
+                    </div>
+                </article>
+                <article class="work-card fade-in-up">
+                    <div class="work-image-placeholder"></div>
+                    <div class="work-info">
+                        <span class="work-cat">Web Design</span>
+                        <h3>Recruit Site</h3>
+                        <p class="work-date">2023.12</p>
+                    </div>
+                </article>
+                <article class="work-card fade-in-up">
+                    <div class="work-image-placeholder"></div>
+                    <div class="work-info">
+                        <span class="work-cat">Other</span>
+                        <h3>Logo Design</h3>
+                        <p class="work-date">2023.11</p>
+                    </div>
+                </article>
+                <article class="work-card fade-in-up">
+                    <div class="work-image-placeholder"></div>
+                    <div class="work-info">
+                        <span class="work-cat">Marketing</span>
+                        <h3>SEO Reports</h3>
+                        <p class="work-date">2023.10</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-text-info">
+                    <span class="footer-company-name">Rise</span>
+                    <span class="footer-address">福岡県福岡市南区大楠</span>
+                    <a href="mailto:info@riselive.net" class="footer-email">info@riselive.net</a>
+                    <a href="https://works.do/R/ti/p/rise_higuchi@riselive" target="_blank" rel="noopener"
+                        class="footer-line-link">
+                        LINEで問い合わせする
+                    </a>
+                </div>
+                <!-- <div class="footer-logo"><img src="images/logo.png" alt="RiseLive"></div> -->
+                <div class="footer-links">
+                    <a href="../">Top</a>
+                    <a href="../about/">About</a>
+                    <a href="./">Works</a>
+                    <a href="../pricing/">Pricing</a>
+                    <a href="../news/">News</a>
+                    <a href="../contact/">Contact</a>
+                </div>
+                <p class="copyright">&copy; 2024 Rise. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
