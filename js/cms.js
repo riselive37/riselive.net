@@ -59,8 +59,10 @@ const renderNews = (contents, containerId, isTop = false) => {
     const container = document.getElementById(containerId);
     if (!container || !contents) return;
 
+    const basePath = isTop ? 'news/' : './';
+
     container.innerHTML = contents.map(item => `
-        <a href="news.html?id=${item.id}" class="news-item fade-in-up visible">
+        <a href="${basePath}?id=${item.id}" class="news-item fade-in-up visible">
             <time>${formatDate(item.publishedAt)}</time>
             <span class="news-tag">${item.category ? item.category.name : 'Info'}</span>
             <span class="news-title">${item.title}</span>
@@ -244,7 +246,7 @@ const renderNewsDetailContent = (id, data) => {
         content = d.content;
     } else {
         // Not found
-        detailContainer.innerHTML = '<p>記事が見つかりませんでした。</p><div class="text-center mt-5"><a href="news.html" class="btn btn-outline">一覧に戻る</a></div>';
+        detailContainer.innerHTML = '<p>記事が見つかりませんでした。</p><div class="text-center mt-5"><a href="./" class="btn btn-outline">一覧に戻る</a></div>';
         listContainer.style.display = 'none';
         detailContainer.style.display = 'block';
         if (pagination) pagination.style.display = 'none';
@@ -264,7 +266,7 @@ const renderNewsDetailContent = (id, data) => {
                 ${content}
             </div>
             <div class="text-center">
-                <a href="news.html" class="btn btn-outline">一覧に戻る</a>
+                <a href="./" class="btn btn-outline">一覧に戻る</a>
             </div>
         </article>
     `;
@@ -286,6 +288,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const newsId = urlParams.get('id');
     const newsList = document.getElementById('newsList');
 
+    // Check if we are on the Top page
+    // We check for .hero-section which is typically only on Top
+    const isTopPage = document.querySelector('.hero-section') !== null;
+
     if (newsId && document.getElementById('newsDetail')) {
         // We are in detail mode
         // Try to fetch from API first if it looks like an API ID (not starting with demo_)
@@ -301,7 +307,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (newsList && CMS_CONFIG.serviceDomain !== 'YOUR_SERVICE_DOMAIN') {
             const data = await fetchFromCMS('news', 5);
             if (data && data.contents && data.contents.length > 0) {
-                renderNews(data.contents, 'newsList');
+                renderNews(data.contents, 'newsList', isTopPage);
             }
             // If no data or fetch failed, static HTML placeholders remain visible
         }
@@ -310,7 +316,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Check if we are on a page that needs works list
     const worksGrid = document.getElementById('worksGrid');
     if (worksGrid && CMS_CONFIG.serviceDomain !== 'YOUR_SERVICE_DOMAIN') {
-        const isTopPage = document.querySelector('.hero-section') !== null;
         const limit = isTopPage ? 6 : 50;
 
         const data = await fetchFromCMS('works', limit);
