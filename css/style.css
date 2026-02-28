@@ -512,7 +512,7 @@ textarea.form-control {
 /* Add a subtle gradient to Hero */
 .hero-section {
     background: linear-gradient(180deg, rgba(235, 110, 160, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
-    padding-top: var(--spacing-lg);
+    padding-top: calc(var(--header-height) + var(--spacing-lg));
     padding-bottom: var(--spacing-lg);
     text-align: center;
 }
