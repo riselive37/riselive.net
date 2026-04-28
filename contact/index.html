@@ -5,17 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://www.riselive.net/contact/">
-    <title>Contact | Rise（ライズ）</title>
-    <meta name="description" content="Rise（ライズ）へのお問い合わせはこちら。Web制作、マーケティング支援、お見積もりなど、お気軽にご相談ください。">
+    <title>お問い合わせ | 福岡・日田のWeb制作 Rise（ライズ）</title>
+    <meta name="description" content="Rise（ライズ）へのお問い合わせ。Web制作、マーケティング支援、SNS運用、AI活用、お見積もりなど、内容が固まっていない段階でもお気軽にご相談ください。">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Rise（ライズ）">
+    <meta property="og:title" content="お問い合わせ | 福岡・日田のWeb制作 Rise（ライズ）">
+    <meta property="og:description" content="Web制作、マーケティング支援、SNS運用、AI活用、お見積もりなど、内容が固まっていない段階でもお気軽にご相談ください。">
+    <meta property="og:url" content="https://www.riselive.net/contact/">
+    <meta property="og:image" content="https://www.riselive.net/images/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="../images/favicon.ico">
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-    <link rel="stylesheet" href="../css/style.css?v=20241221_02">
+    <link rel="stylesheet" href="../css/style.css?v=20260428_02">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
         rel="stylesheet">
-    <script src="../js/main.js?v=20241221_02" defer></script>
+    <script src="../js/main.js?v=20260428_02" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHMC1N46T3"></script>
@@ -33,11 +41,11 @@
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="../" class="logo"><img src="../images/logo.png" alt="Rise（ライズ）" class="logo-img"></a>
-            <div class="menu-toggle" id="menuToggle">
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="メニューを開く" aria-controls="navMenu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <nav>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="../" class="nav-link">Top</a></li>
@@ -51,86 +59,173 @@
         </div>
     </header>
 
-    <main class="section-lg">
-        <div class="container narrow-container">
-            <h1 class="section-title fade-in-up">Contact</h1>
-            <p class="text-center text-muted fade-in-up" style="margin-bottom: 3rem;">
-                制作のご依頼、ご相談など、お気軽にお問い合わせください。<br>
-                通常3営業日以内に返信いたします。
-            </p>
-
-            <form class="contact-form fade-in-up" id="contactForm" action="https://formspree.io/f/mwveldwq"
-                method="POST">
-                <div class="form-group">
-                    <label for="company" class="form-label">御社名</label>
-                    <input type="text" id="company" name="company" class="form-control" placeholder="〇〇株式会社">
-                </div>
-                <div class="form-group">
-                    <label for="name" class="form-label required">お名前</label>
-                    <input type="text" id="name" name="name" class="form-control" required placeholder="山田 太郎">
-                </div>
-                <div class="form-group">
-                    <label for="email" class="form-label required">メールアドレス</label>
-                    <input type="email" id="email" name="email" class="form-control" required
-                        placeholder="info@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="subject" class="form-label">件名</label>
-                    <div style="position: relative;">
-                        <select id="subject" name="subject" class="form-control">
-                            <option value="">選択してください</option>
-                            <option value="quote">お見積もりのご依頼</option>
-                            <option value="consultation">制作に関するご相談</option>
-                            <option value="partner">パートナーシップについて</option>
-                            <option value="other">その他</option>
-                        </select>
+    <main>
+        <section class="rl-sub-hero rl-contact-hero">
+            <div class="container">
+                <div class="rl-sub-hero-grid">
+                    <div class="fade-in-up">
+                        <p class="rl-eyebrow">Contact</p>
+                        <h1 class="rl-sub-title">まずは、<br>今の状況から<br>聞かせてください。</h1>
+                        <p class="rl-sub-lead">
+                            制作内容や予算が決まっていなくても大丈夫です。現状の課題、やってみたいこと、困っていることを伺いながら、必要な進め方を一緒に整理します。
+                        </p>
+                    </div>
+                    <div class="rl-hero-visual rl-contact-visual fade-in-up" aria-hidden="true">
+                        <div class="rl-message-card">
+                            <span>Message</span>
+                            <strong>内容が固まっていなくてもOK</strong>
+                        </div>
+                        <div class="rl-response-line"><i></i><i></i><i></i></div>
+                        <div class="rl-contact-chips"><span>Form</span><span>LINE</span><span>Mail</span></div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="message" class="form-label required">お問い合わせ内容</label>
-                    <textarea id="message" name="message" class="form-control" required
-                        placeholder="ご要望の詳細をご記入ください"></textarea>
-                </div>
-
-                <div class="text-center" style="margin-top: 3rem;">
-                    <button type="submit" class="btn">送信する</button>
-                </div>
-            </form>
-
-            <!-- LINE Contact -->
-            <div class="fade-in-up"
-                style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border-color); text-align: center;">
-                <h2 style="font-size: 1.25rem; margin-bottom: 1rem;">LINEでのお問い合わせ</h2>
-                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
-                    LINEからもお問い合わせいただけます。<br>
-                    お気軽にご連絡ください。
-                </p>
-                <a href="https://works.do/R/ti/p/rise_higuchi@riselive" target="_blank" rel="noopener" class="btn"
-                    style="background-color: #06C755; border-color: #06C755; color: #fff; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
-                    <svg viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px;">
-                        <path
-                            d="M12 .5C5.6 .5 .5 5.1 .5 10.7c0 2.9 1.4 5.6 3.9 7.4 .2 .1 .3 .5 .1 .9l-.6 2.1c-.2 .6-.1 1.2 .5 1.2 .2 0 .4-.1 .6-.2l2.9-1.6c.3-.2 .7-.2 1.1-.1 1 .3 2 .4 3 .4 6.4 0 11.5-4.6 11.5-10.2S18.4 .5 12 .5z" />
-                    </svg>
-                    LINEで問い合わせる
-                </a>
             </div>
+        </section>
 
-            <!-- Success Message (Hidden by default) -->
-            <div id="formSuccessMessage" class="fade-in-up"
-                style="display: none; text-align: center; padding: 4rem 1rem;">
-                <h2 class="section-title">お問い合わせありがとうございます</h2>
-                <p style="margin-bottom: 2rem; line-height: 1.8;">
-                    メールソフトが起動しますので、内容をご確認の上、送信してください。<br>
-                    <br>
-                    万が一メールソフトが起動しない場合は、お手数ですが<br>
-                    <a href="mailto:info@riselive.net"
-                        style="color: var(--brand-color); text-decoration: underline;">info@riselive.net</a>
-                    まで直接ご連絡をお願いいたします。
-                </p>
-                <a href="../" class="btn btn-outline">トップページへ戻る</a>
+        <section class="rl-section">
+            <div class="container">
+                <div class="rl-section-head fade-in-up">
+                    <div>
+                        <span class="rl-label">相談方法</span>
+                        <h2 class="rl-section-title">Contact Options</h2>
+                    </div>
+                    <p>通常3営業日以内に返信いたします。営業時間は月〜土 / 10:00〜18:30、定休日は日曜日です。</p>
+                </div>
+                <div class="rl-contact-option-grid">
+                    <article class="rl-value-card fade-in-up"><span>Form</span><h3>フォームで相談</h3><p>内容を整理して送れるため、お見積もりや制作相談におすすめです。</p></article>
+                    <a class="rl-value-card rl-option-link fade-in-up" href="https://works.do/R/ti/p/rise_higuchi@riselive" target="_blank" rel="noopener"><span>LINE</span><h3>LINEで相談</h3><p>ちょっとした確認やURL共有など、気軽にご連絡いただけます。</p></a>
+                    <a class="rl-value-card rl-option-link fade-in-up" href="mailto:info@riselive.net"><span>Mail</span><h3>メールで相談</h3><p>資料や既存サイトの情報がある場合はメールでも受け付けています。</p></a>
+                </div>
             </div>
+        </section>
 
-        </div>
+        <section class="rl-section rl-soft-section">
+            <div class="container">
+                <div class="rl-contact-layout">
+                    <div class="fade-in-up">
+                        <span class="rl-label">お問い合わせフォーム</span>
+                        <h2 class="rl-section-title">Form</h2>
+                        <p class="rl-form-lead">
+                            分かる範囲だけで大丈夫です。料金感が気になる方は、先に<a href="../pricing/">Pricing</a>もご覧ください。
+                        </p>
+                        <div class="rl-before-card">
+                            <h3>相談前に準備できていなくても大丈夫です</h3>
+                            <ul class="rl-check-list">
+                                <li>目的や課題が曖昧でもOK</li>
+                                <li>既存サイトやSNSのURLだけでもOK</li>
+                                <li>予算感の相談からでもOK</li>
+                                <li>オンライン相談もOK</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <form class="contact-form fade-in-up" id="contactForm" action="https://formspree.io/f/mwveldwq"
+                            method="POST">
+                            <div class="form-group">
+                                <label for="company" class="form-label">御社名 / 屋号</label>
+                                <input type="text" id="company" name="company" class="form-control" placeholder="例）Rise商店">
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="form-label required">お名前</label>
+                                <input type="text" id="name" name="name" class="form-control" required placeholder="例）山田 太郎">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label required">メールアドレス</label>
+                                <input type="email" id="email" name="email" class="form-control" required
+                                    placeholder="例）info@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="tel" class="form-label">電話番号</label>
+                                <input type="tel" id="tel" name="tel" class="form-control" placeholder="例）050-0000-0000">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="form-label required">ご相談内容</label>
+                                <select id="subject" name="subject" class="form-control" required>
+                                    <option value="">選択してください</option>
+                                    <option value="Webサイト制作・改修">Webサイト制作・改修</option>
+                                    <option value="LP制作">LP制作</option>
+                                    <option value="SNS運用">SNS運用</option>
+                                    <option value="Googleマップ・広告">Googleマップ・広告</option>
+                                    <option value="AI活用・業務改善">AI活用・業務改善</option>
+                                    <option value="印刷物・DTP">印刷物・DTP</option>
+                                    <option value="その他">その他</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget" class="form-label">ご予算</label>
+                                <select id="budget" name="budget" class="form-control">
+                                    <option value="未定">未定</option>
+                                    <option value="〜10万円">〜10万円</option>
+                                    <option value="10〜30万円">10〜30万円</option>
+                                    <option value="30〜50万円">30〜50万円</option>
+                                    <option value="50万円〜">50万円〜</option>
+                                    <option value="月額サポートを相談したい">月額サポートを相談したい</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label required">お問い合わせ内容</label>
+                                <textarea id="message" name="message" class="form-control" required
+                                    placeholder="例）既存サイトを見直したいです。問い合わせを増やしたいのですが、何から始めるべきか相談したいです。"></textarea>
+                            </div>
+
+                            <div class="rl-form-actions">
+                                <button type="submit" class="rl-btn">送信する</button>
+                            </div>
+                        </form>
+
+                        <div id="formSuccessMessage" class="rl-success-panel fade-in-up">
+                            <span class="rl-label">送信完了</span>
+                            <h2>お問い合わせありがとうございます</h2>
+                            <p>内容を確認のうえ、通常3営業日以内にご返信いたします。</p>
+                            <a href="../" class="rl-btn rl-btn-outline">トップページへ戻る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rl-section">
+            <div class="container">
+                <div class="rl-section-head fade-in-up">
+                    <div>
+                        <span class="rl-label">送信後の流れ</span>
+                        <h2 class="rl-section-title">After Sending</h2>
+                    </div>
+                    <p>お問い合わせ後は、内容を確認して必要なヒアリングやご提案に進みます。</p>
+                </div>
+                <div class="rl-flow-grid fade-in-up">
+                    <article><b>01</b><h3>内容確認</h3><p>いただいた内容を確認します。</p></article>
+                    <article><b>02</b><h3>返信・日程調整</h3><p>通常3営業日以内にご連絡します。</p></article>
+                    <article><b>03</b><h3>ヒアリング</h3><p>課題や目的を一緒に整理します。</p></article>
+                    <article><b>04</b><h3>ご提案</h3><p>必要な進め方やお見積もりをご案内します。</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="rl-section rl-soft-section">
+            <div class="container">
+                <div class="rl-overview-layout">
+                    <div class="fade-in-up">
+                        <span class="rl-label">会社連絡先</span>
+                        <h2 class="rl-section-title">Info</h2>
+                        <p class="rl-overview-lead">フォーム以外からのご連絡も受け付けています。営業時間外のご連絡は翌営業日の対応となる場合があります。</p>
+                    </div>
+                    <div class="rl-overview-card fade-in-up">
+                        <dl>
+                            <div><dt>屋号</dt><dd>Rise（ライズ）</dd></div>
+                            <div><dt>代表者</dt><dd>樋口 和也</dd></div>
+                            <div><dt>住所</dt><dd>〒815-0082 福岡県福岡市南区大楠</dd></div>
+                            <div><dt>TEL</dt><dd><a href="tel:05037435058">050-3743-5058</a></dd></div>
+                            <div><dt>MAIL</dt><dd><a href="mailto:info@riselive.net">info@riselive.net</a></dd></div>
+                            <div><dt>LINE</dt><dd><a href="https://works.do/R/ti/p/rise_higuchi@riselive" target="_blank" rel="noopener">LINEで問い合わせする</a></dd></div>
+                            <div><dt>営業時間</dt><dd>月〜土 / 10:00〜18:30</dd></div>
+                            <div><dt>定休日</dt><dd>日曜日</dd></div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -145,7 +240,6 @@
                         LINEで問い合わせする
                     </a>
                 </div>
-                <!-- <div class="footer-logo"><img src="images/logo.png" alt="RiseLive"></div> -->
                 <div class="footer-links">
                     <a href="../">Top</a>
                     <a href="../about/">About</a>

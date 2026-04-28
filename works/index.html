@@ -5,43 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://www.riselive.net/works/">
-    <title>Works | Rise（ライズ）</title>
-    <meta name="description" content="Rise（ライズ）の制作実績一覧です。Webサイト制作、LP制作、SNS運用、グラフィックデザインなど、これまでの実績をご覧いただけます。">
+    <title>制作実績 | 福岡・日田のWeb制作 Rise（ライズ）</title>
+    <meta name="description" content="Rise（ライズ）の制作実績。ホームページ制作、LP制作、SNS運用、Googleマップ、印刷物デザインなど、事業に合わせた支援事例をご紹介します。">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Rise（ライズ）">
+    <meta property="og:title" content="制作実績 | 福岡・日田のWeb制作 Rise（ライズ）">
+    <meta property="og:description" content="ホームページ制作、LP制作、SNS運用、Googleマップ、印刷物デザインなど、事業に合わせた支援事例をご紹介します。">
+    <meta property="og:url" content="https://www.riselive.net/works/">
+    <meta property="og:image" content="https://www.riselive.net/images/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="../images/favicon.ico">
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-    <link rel="stylesheet" href="../css/style.css?v=20241221_02">
+    <link rel="stylesheet" href="../css/style.css?v=20260428_02">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <script src="../js/cms.js" defer></script>
-    <script src="../js/main.js?v=20241221_02" defer></script>
-    <style>
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        .filter-btn {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            padding: 8px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: var(--text-main);
-            color: #fff;
-            border-color: var(--text-main);
-        }
-    </style>
+    <script src="../js/main.js?v=20260428_02" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHMC1N46T3"></script>
@@ -59,11 +42,11 @@
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="../" class="logo"><img src="../images/logo.png" alt="Rise（ライズ）" class="logo-img"></a>
-            <div class="menu-toggle" id="menuToggle">
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="メニューを開く" aria-controls="navMenu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <nav>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="../" class="nav-link">Top</a></li>
@@ -77,70 +60,101 @@
         </div>
     </header>
 
-    <main class="section-lg">
-        <div class="container">
-            <h1 class="section-title fade-in-up">Works</h1>
-            <p class="text-center text-muted fade-in-up" style="margin-bottom: 3rem;">制作実績一覧</p>
-
-            <div class="filter-buttons fade-in-up">
-                <button class="filter-btn active">All</button>
-                <button class="filter-btn">Web</button>
-                <button class="filter-btn">DTP</button>
-                <button class="filter-btn">Other</button>
+    <main>
+        <section class="rl-sub-hero rl-works-hero">
+            <div class="container">
+                <div class="rl-sub-hero-grid">
+                    <div class="fade-in-up">
+                        <p class="rl-eyebrow">Works</p>
+                        <h1 class="rl-sub-title">事業の想いが、<br>伝わる形になった事例。</h1>
+                        <p class="rl-sub-lead">
+                            ホームページやLP、SNS、印刷物など、目的に合わせて整理・制作した実績を掲載しています。公開できる範囲で、支援内容や狙いもあわせて紹介します。
+                        </p>
+                    </div>
+                    <div class="rl-hero-visual rl-works-visual fade-in-up" aria-hidden="true">
+                        <div class="rl-portfolio-tabs"><span>All</span><span>Web</span><span>SNS</span></div>
+                        <div class="rl-portfolio-board">
+                            <i></i><i></i><i></i><i></i>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="works-grid" id="worksGrid">
-                <!-- Static Placeholders simulating microCMS content -->
-                <article class="work-card fade-in-up">
-                    <div class="work-image-placeholder"></div>
-                    <div class="work-info">
-                        <span class="work-cat">Web Design</span>
-                        <h3>Beauty Salon Website</h3>
-                        <p class="work-date">2024.03</p>
+        <section class="rl-section">
+            <div class="container">
+                <div class="rl-section-head fade-in-up">
+                    <div>
+                        <span class="rl-label">制作実績</span>
+                        <h2 class="rl-section-title">Works</h2>
                     </div>
-                </article>
-                <article class="work-card fade-in-up">
-                    <div class="work-image-placeholder"></div>
-                    <div class="work-info">
-                        <span class="work-cat">LP</span>
-                        <h3>SaaS Product Landing Page</h3>
-                        <p class="work-date">2024.02</p>
+                    <p>ホームページ制作や印刷物デザインなど、これまでにお手伝いした実績をご覧いただけます。</p>
+                </div>
+
+                <div class="filter-buttons rl-filter-buttons fade-in-up">
+                    <button class="filter-btn active" type="button">All</button>
+                    <button class="filter-btn" type="button">Web</button>
+                    <button class="filter-btn" type="button">LP</button>
+                    <button class="filter-btn" type="button">SNS</button>
+                    <button class="filter-btn" type="button">DTP</button>
+                    <button class="filter-btn" type="button">Other</button>
+                </div>
+
+                <div class="works-grid rl-works-grid" id="worksGrid">
+                    <div class="rl-empty-state fade-in-up">
+                        <h3>制作実績は準備中です</h3>
+                        <p>公開できる事例から順次ご紹介します。近い事例がない場合も、目的に合わせてご相談いただけます。</p>
                     </div>
-                </article>
-                <article class="work-card fade-in-up">
-                    <div class="work-image-placeholder"></div>
-                    <div class="work-info">
-                        <span class="work-cat">DTP</span>
-                        <h3>Exhibition Flyer</h3>
-                        <p class="work-date">2024.01</p>
-                    </div>
-                </article>
-                <article class="work-card fade-in-up">
-                    <div class="work-image-placeholder"></div>
-                    <div class="work-info">
-                        <span class="work-cat">Web Design</span>
-                        <h3>Recruit Site</h3>
-                        <p class="work-date">2023.12</p>
-                    </div>
-                </article>
-                <article class="work-card fade-in-up">
-                    <div class="work-image-placeholder"></div>
-                    <div class="work-info">
-                        <span class="work-cat">Other</span>
-                        <h3>Logo Design</h3>
-                        <p class="work-date">2023.11</p>
-                    </div>
-                </article>
-                <article class="work-card fade-in-up">
-                    <div class="work-image-placeholder"></div>
-                    <div class="work-info">
-                        <span class="work-cat">Marketing</span>
-                        <h3>SEO Reports</h3>
-                        <p class="work-date">2023.10</p>
-                    </div>
-                </article>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section class="rl-section rl-soft-section">
+            <div class="container">
+                <div class="rl-section-head fade-in-up">
+                    <div>
+                        <span class="rl-label">支援範囲</span>
+                        <h2 class="rl-section-title">Support Range</h2>
+                    </div>
+                    <p>納品物を作るだけでなく、事業に合わせて「何をどう伝えるか」から整理します。</p>
+                </div>
+                <div class="rl-value-grid rl-support-grid">
+                    <article class="rl-value-card fade-in-up"><span>01</span><h3>企画・構成整理</h3><p>目的、強み、導線を整理し、伝える順番を設計します。</p></article>
+                    <article class="rl-value-card fade-in-up"><span>02</span><h3>デザイン・実装</h3><p>見た目と使いやすさを両立し、更新しやすい形にします。</p></article>
+                    <article class="rl-value-card fade-in-up"><span>03</span><h3>更新・運用</h3><p>公開後の修正、発信、改善の相談まで伴走します。</p></article>
+                    <article class="rl-value-card fade-in-up"><span>04</span><h3>集客導線改善</h3><p>Web、SNS、Googleマップ、広告をつなげて見直します。</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="rl-section">
+            <div class="container">
+                <div class="rl-link-panel fade-in-up">
+                    <div>
+                        <span class="rl-label">From Works To Consultation</span>
+                        <h2>近い事例がなくても、<br>必要な形から一緒に整理します。</h2>
+                    </div>
+                    <p>近い業種や目的の事例がなくても大丈夫です。状況やご予算に合わせて、必要な形を一緒に整理します。</p>
+                    <div class="rl-panel-actions">
+                        <a href="../pricing/" class="rl-btn rl-btn-outline">料金・進め方を見る</a>
+                        <a href="../contact/" class="rl-text-link">相談する</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rl-contact-zone">
+            <div class="container">
+                <div class="rl-contact-card fade-in-up">
+                    <div>
+                        <span class="rl-label">お問い合わせ・無料相談</span>
+                        <h2>Contact</h2>
+                    </div>
+                    <p>内容が固まっていなくても大丈夫です。現状の課題整理や改善のヒントだけでも、お気軽にご相談ください。</p>
+                    <a href="../contact/" class="rl-square-link" aria-label="相談する">+</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -155,7 +169,6 @@
                         LINEで問い合わせする
                     </a>
                 </div>
-                <!-- <div class="footer-logo"><img src="images/logo.png" alt="RiseLive"></div> -->
                 <div class="footer-links">
                     <a href="../">Top</a>
                     <a href="../about/">About</a>

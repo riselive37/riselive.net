@@ -5,18 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://www.riselive.net/news/">
-    <title>News | Rise（ライズ）</title>
-    <meta name="description" content="Rise（ライズ）からのお知らせ一覧です。制作実績の公開、サービスに関する最新情報、コラムなどを発信しています。">
+    <title>お知らせ・コラム | 福岡・日田のWeb制作 Rise（ライズ）</title>
+    <meta name="description" content="Rise（ライズ）からのお知らせ、制作実績の更新、Web・SNS・AI活用に関するコラムを掲載しています。">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Rise（ライズ）">
+    <meta property="og:title" content="お知らせ・コラム | 福岡・日田のWeb制作 Rise（ライズ）">
+    <meta property="og:description" content="Rise（ライズ）からのお知らせ、制作実績の更新、Web・SNS・AI活用に関するコラムを掲載しています。">
+    <meta property="og:url" content="https://www.riselive.net/news/">
+    <meta property="og:image" content="https://www.riselive.net/images/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="../images/favicon.ico">
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-    <link rel="stylesheet" href="../css/style.css?v=20241221_02">
+    <link rel="stylesheet" href="../css/style.css?v=20260428_02">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <script src="../js/cms.js" defer></script>
-    <script src="../js/main.js?v=20241221_02" defer></script>
+    <script src="../js/main.js?v=20260428_02" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHMC1N46T3"></script>
@@ -34,11 +42,11 @@
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="../" class="logo"><img src="../images/logo.png" alt="Rise（ライズ）" class="logo-img"></a>
-            <div class="menu-toggle" id="menuToggle">
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="メニューを開く" aria-controls="navMenu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <nav>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="../" class="nav-link">Top</a></li>
@@ -52,47 +60,83 @@
         </div>
     </header>
 
-    <main class="section-lg">
-        <div class="container">
-            <h1 class="section-title fade-in-up">News</h1>
-
-            <div class="news-list" id="newsList">
-                <!-- Static Placeholders with IDs -->
-                <a href="./?id=demo_renewal" class="news-item fade-in-up">
-                    <time>2024.05.01</time>
-                    <span class="news-tag">Info</span>
-                    <span class="news-title">Webサイトをリニューアルしました。今後実績を更新していきます。</span>
-                </a>
-                <a href="./?id=demo_work1" class="news-item fade-in-up">
-                    <time>2024.04.15</time>
-                    <span class="news-tag">Work</span>
-                    <span class="news-title">新規制作実績を公開しました（株式会社〇〇様 コーポレートサイト）</span>
-                </a>
-                <a href="./?id=demo_work2" class="news-item fade-in-up">
-                    <time>2024.04.10</time>
-                    <span class="news-tag">Work</span>
-                    <span class="news-title">新規制作実績を公開しました（株式会社△△様 LP）</span>
-                </a>
-                <a href="./?id=demo_column" class="news-item fade-in-up">
-                    <time>2024.04.05</time>
-                    <span class="news-tag">Blog</span>
-                    <span class="news-title">【コラム】最近のWebデザインのトレンドについて</span>
-                </a>
-                <a href="./?id=demo_start" class="news-item fade-in-up">
-                    <time>2024.04.01</time>
-                    <span class="news-tag">Info</span>
-                    <span class="news-title">フリーランスとしての活動を本格的に開始しました。</span>
-                </a>
+    <main>
+        <section class="rl-sub-hero rl-news-hero">
+            <div class="container">
+                <div class="rl-sub-hero-grid">
+                    <div class="fade-in-up">
+                        <p class="rl-eyebrow">News / Column</p>
+                        <h1 class="rl-sub-title">お知らせと、<br>役立つ小さなヒント。</h1>
+                        <p class="rl-sub-lead">
+                            制作実績の更新やサービスのお知らせに加えて、Web・SNS・AI活用の考え方を少しずつ発信していきます。
+                        </p>
+                    </div>
+                    <div class="rl-hero-visual rl-news-visual fade-in-up" aria-hidden="true">
+                        <div class="rl-latest-card">
+                            <span>Latest</span>
+                            <strong>Webと発信の改善メモ</strong>
+                        </div>
+                        <div class="rl-article-lines"><i></i><i></i><i></i></div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <!-- Detail Container (Hidden by default) -->
-            <div id="newsDetail" class="news-detail" style="display: none;">
-                <!-- Content injected via JS -->
+        <section class="rl-section">
+            <div class="container">
+                <div class="rl-section-head fade-in-up">
+                    <div>
+                        <span class="rl-label">最新情報</span>
+                        <h2 class="rl-section-title">Latest</h2>
+                    </div>
+                    <p>Riseからのお知らせや実績更新、Web・SNS・AI活用に役立つコラムをお届けします。</p>
+                </div>
+
+                <div class="rl-news-category-pills fade-in-up" aria-label="News categories">
+                    <span>All</span><span>Info</span><span>Work</span><span>Column</span><span>Service</span>
+                </div>
+
+                <div class="news-list rl-news-list" id="newsList">
+                    <div class="rl-empty-state fade-in-up">
+                        <h3>お知らせは準備中です</h3>
+                        <p>新しいお知らせを順次お届けします。制作や運用のご相談はお問い合わせよりご連絡ください。</p>
+                    </div>
+                </div>
+
+                <div id="newsDetail" class="news-detail">
+                </div>
             </div>
+        </section>
 
+        <section class="rl-section rl-soft-section">
+            <div class="container">
+                <div class="rl-section-head fade-in-up">
+                    <div>
+                        <span class="rl-label">読む内容</span>
+                        <h2 class="rl-section-title">Reading Guide</h2>
+                    </div>
+                    <p>目的に合わせて読みたい情報を探せるよう、記事の種類ごとにご案内します。</p>
+                </div>
+                <div class="rl-value-grid rl-reading-grid">
+                    <article class="rl-value-card fade-in-up"><span>Info</span><h3>お知らせ</h3><p>営業・サービス・サイト更新など、Riseからのお知らせをお届けします。</p></article>
+                    <article class="rl-value-card fade-in-up"><span>Work</span><h3>実績更新</h3><p>公開可能な制作事例や支援内容の更新情報を紹介します。</p></article>
+                    <article class="rl-value-card fade-in-up"><span>Column</span><h3>コラム</h3><p>Web・SNS・AI活用の考え方や小さな改善ヒントを発信します。</p></article>
+                </div>
+            </div>
+        </section>
 
-
-        </div>
+        <section class="rl-contact-zone">
+            <div class="container">
+                <div class="rl-contact-card fade-in-up">
+                    <div>
+                        <span class="rl-label">お問い合わせ・無料相談</span>
+                        <h2>Contact</h2>
+                    </div>
+                    <p>内容が固まっていなくても大丈夫です。現状の課題整理や改善のヒントだけでも、お気軽にご相談ください。</p>
+                    <a href="../contact/" class="rl-square-link" aria-label="相談する">+</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -107,7 +151,6 @@
                         LINEで問い合わせする
                     </a>
                 </div>
-                <!-- <div class="footer-logo"><img src="images/logo.png" alt="RiseLive"></div> -->
                 <div class="footer-links">
                     <a href="../">Top</a>
                     <a href="../about/">About</a>

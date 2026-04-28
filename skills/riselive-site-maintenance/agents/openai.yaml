@@ -1,0 +1,4 @@
+interface:
+  display_name: "RiseLive Site Maintenance"
+  short_description: "RiseLive静的サイト制作と保守の専用手順"
+  default_prompt: "Use $riselive-site-maintenance to update the RiseLive website while preserving its design system and integrations."

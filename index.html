@@ -8,16 +8,25 @@
     <title>Rise(ライズ)｜日田市・福岡のWeb制作・マーケティング支援</title>
     <meta name="description"
         content="福岡市・日田市を中心に、中小企業や個人事業、店舗向けにWeb制作・デザイン・マーケティング支援を行っています。考えや強みを整理し、伝わるカタチに。事業のパートナーとして丁寧に伴走します。">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Rise（ライズ）">
+    <meta property="og:title" content="Rise(ライズ)｜日田市・福岡のWeb制作・マーケティング支援">
+    <meta property="og:description"
+        content="福岡市・日田市を中心に、Web制作・デザイン・マーケティング支援を行っています。事業のパートナーとして丁寧に伴走します。">
+    <meta property="og:url" content="https://www.riselive.net/">
+    <meta property="og:image" content="https://www.riselive.net/images/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="stylesheet" href="css/style.css?v=20241221_02">
+    <link rel="stylesheet" href="css/style.css?v=20260428_02">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <script src="js/cms.js" defer=""></script>
-    <script src="js/main.js?v=20241221_02" defer=""></script>
+    <script src="js/main.js?v=20260428_02" defer=""></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHMC1N46T3"></script>
@@ -28,6 +37,26 @@
 
         gtag('config', 'G-DHMC1N46T3');
     </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Rise（ライズ）",
+            "url": "https://www.riselive.net/",
+            "image": "https://www.riselive.net/images/logo.png",
+            "email": "info@riselive.net",
+            "telephone": "+81-50-3743-5058",
+            "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "福岡県",
+                "addressLocality": "福岡市南区大楠",
+                "postalCode": "815-0082",
+                "addressCountry": "JP"
+            },
+            "areaServed": ["福岡", "日田"],
+            "description": "福岡市・日田市を中心に、中小企業や個人事業、店舗向けにWeb制作・デザイン・マーケティング支援を行っています。"
+        }
+    </script>
 </head>
 
 <body>
@@ -36,11 +65,11 @@
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="./" class="logo"><img src="images/logo.png" alt="Rise（ライズ）" class="logo-img"></a>
-            <div class="menu-toggle" id="menuToggle">
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="メニューを開く" aria-controls="navMenu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <nav>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="./" class="nav-link active">Top</a></li>
@@ -54,175 +83,200 @@
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero-section">
-        <div class="container hero-container">
-            <div class="hero-content fade-in-up">
-                <p class="hero-sub">Structure Designer / Web Director / Designer</p>
-                <h1 class="hero-title">
-                    考えを整理し、<br>
-                    ビジネスの構造を<br class="sp-br">つくる
-                </h1>
-                <p class="hero-desc">
-                    ただ制作するだけでなく、
-課題を整理し、方向を設計し、必要な形へ落とし込みます。
-対話を通じてビジネスの構造を整え、前に進むための仕組みをつくります。
-                </p>
-                <a href="contact/" class="btn">お問い合わせ</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services -->
-    <section class="section service-section" id="services">
-        <div class="container">
-            <h2 class="section-title fade-in-up">Services</h2>
-            <div class="service-grid">
-
-                <div class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" class="icon-svg">
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 2c3.31 0 6 2.69 6 6 0 2.38-1.5 4.35-3.5 5.25v2.75h-5v-2.75C7.5 14.35 6 12.38 6 10c0-3.31 2.69-6 6-6zm2.5 13h-5v1h5v-1zm0 2h-5v1h5v-1z"
-                                fill="currentColor"></path>
-                        </svg>
+    <main>
+        <!-- Hero -->
+        <section class="hero-section rl-hero">
+            <div class="container">
+                <div class="rl-hero-grid">
+                    <div class="rl-hero-copy fade-in-up">
+                        <p class="rl-eyebrow">Web marketing / AI support</p>
+                        <h1 class="rl-hero-title">
+                            地域の仕事を、<br>
+                            <span>WebとAI</span>で<br>
+                            動く形に。
+                        </h1>
+                        <p class="rl-hero-lead">
+                            ホームページ制作から、集客・運用・業務改善まで。作って終わりではなく、現場で使える仕組みとして一緒に育てます。
+                        </p>
+                        <div class="rl-hero-actions">
+                            <a href="contact/" class="rl-btn">相談する</a>
+                            <a href="#services" class="rl-text-link">できることを見る</a>
+                        </div>
                     </div>
-                    <h3>構想設計ディレクション</h3>
-                    <p>事業やプロジェクトの構想を整理し、実行可能な設計図へ。ビジョンの言語化から構造設計まで、土台づくりをサポートします。</p>
+
+                    <div class="rl-workspace fade-in-up" aria-label="Riseの支援イメージ">
+                        <div class="rl-workspace-label">AI / WEB / OPERATION</div>
+                        <div class="rl-board">
+                            <h2>集客と運用の状態を<br>見える化して改善する</h2>
+                            <div class="rl-metrics">
+                                <div><strong>2x</strong><span>問い合わせ</span></div>
+                                <div><strong>30%</strong><span>来店増加</span></div>
+                                <div><strong>40%</strong><span>作業削減</span></div>
+                            </div>
+                            <div class="rl-chart" aria-hidden="true"></div>
+                        </div>
+                        <div class="rl-task-list">
+                            <div class="rl-task"><span>01</span><strong>課題を整理</strong><small>何から始めるかを明確に</small></div>
+                            <div class="rl-task"><span>02</span><strong>導線を設計</strong><small>Web・SNS・広告をつなぐ</small></div>
+                            <div class="rl-task"><span>03</span><strong>運用を改善</strong><small>数字を見ながら育てる</small></div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" class="icon-svg">
-                            <path
-                                d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"
-                                fill="currentColor"></path>
-                        </svg>
-                    </div>
-                    <h3>Webサイト制作</h3>
-                    <p>コーポレートサイト、LP、メディアサイトなど、目的に合わせたWebサイトを制作します。スマートフォン対応、CMS導入もお任せください。</p>
-                </div>
-
-                <div class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" class="icon-svg">
-                            <path
-                                d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2ZM7.6 4C5.6 4 4 5.6 4 7.6V16.4C4 18.4 5.6 20 7.6 20H16.4C18.4 20 20 18.4 20 16.4V7.6C20 5.6 18.4 4 16.4 4H7.6ZM12 7C14.8 7 17 9.2 17 12C17 14.8 14.8 17 12 17C9.2 17 7 14.8 7 12C7 9.2 9.2 7 12 7ZM12 9C10.3 9 9 10.3 9 12C9 13.7 10.3 15 12 15C13.7 15 15 13.7 15 12C15 10.3 13.7 9 12 9ZM17.25 5.5C17.25 6.33 16.58 7 15.75 7C14.92 7 14.25 6.33 14.25 5.5C14.25 4.67 14.92 4 15.75 4C16.58 4 17.25 4.67 17.25 5.5Z"
-                                fill="currentColor"></path>
-                        </svg>
-                    </div>
-                    <h3>SNS運用代行</h3>
-                    <p>Instagramを中心に、企業や店舗のアカウント運用を代行。投稿画像の作成からハッシュタグ選定、インサイト分析までサポートします。</p>
-                </div>
-
-                <div class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" class="icon-svg">
-                            <path
-                                d="M16 6L18.29 8.29L13.41 13.17L9.41 9.17L2 16.59L3.41 18L9.41 12L13.41 16L19.71 9.71L22 12V6H16Z"
-                                fill="currentColor"></path>
-                        </svg>
-                    </div>
-                    <h3>Web広告・マーケティング</h3>
-                    <p>Meta広告（Facebook/Instagram）やGoogle広告の運用代行に加え、SEO対策やアクセス解析による改善提案で集客を最大化します。</p>
-                </div>
-
-                <div class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" class="icon-svg">
-                            <path
-                                d="M21 10.5H19V6.5C19 5.4 18.1 4.5 17 4.5H7C5.9 4.5 5 5.4 5 6.5V10.5H3V16.5H5V20.5C5 21.6 5.9 22.5 7 22.5H17C18.1 22.5 19 21.6 19 20.5V16.5H21V10.5ZM17 20.5H7V16.5H17V20.5ZM17 12.5H7V6.5H17V12.5ZM9 9.5C9.55228 9.5 10 9.05228 10 8.5C10 7.94772 9.55228 7.5 9 7.5C8.44772 7.5 8 7.94772 8 8.5C8 9.05228 8.44772 9.5 9 9.5ZM15 9.5C15.5523 9.5 16 9.05228 16 8.5C16 7.94772 15.5523 7.5 15 7.5C14.4477 7.5 14 7.94772 14 8.5C14 9.05228 14.4477 9.5 15 9.5Z"
-                                fill="currentColor"></path>
-                        </svg>
-                    </div>
-                    <h3>AI活用・業務効率化</h3>
-                    <p>ChatGPTなどの生成AIを活用し、業務効率化や作業負担の軽減をサポートします。日々の業務への取り入れ方や、実務での活用方法をご相談いただけます。</p>
-                </div>
-
-                <div class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" class="icon-svg">
-                            <path d="M7 19h10V4H7v15zm-5-2h4V6H2v11zM18 6v11h4V6h-4z" fill="currentColor"></path>
-                        </svg>
-                    </div>
-                    <h3>グラフィックデザイン</h3>
-                    <p>Webだけでなく、チラシ、名刺、パンフレットなどの印刷物デザインも対応。統一感のあるブランディングを提案します。</p>
-                </div>
-
-                <div class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" class="icon-svg">
-                            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"
-                                fill="currentColor"></path>
-                        </svg>
-                    </div>
-                    <h3>IT・Webレッスン</h3>
-                    <p>CanvaやAIツール（ChatGPT等）の活用法、SNS投稿のノウハウなど、実務で使えるスキルをマンツーマンでレクチャーします。</p>
-                </div>
-
-                <div class="service-card fade-in-up">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" class="icon-svg">
-                            <path
-                                d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"
-                                fill="currentColor"></path>
-                        </svg>
-                    </div>
-                    <h3>保守・運用サポート</h3>
-                    <p>更新業務の代行や、サーバー・ドメインの管理など、Webに関する面倒な作業をサポート。本業に集中できる環境を作ります。</p>
+                <div class="rl-issue-grid fade-in-up">
+                    <a href="#services" class="rl-issue-card"><span>Issue 01</span><strong>ホームページを作ったけど問い合わせがこない</strong></a>
+                    <a href="#services" class="rl-issue-card"><span>Issue 02</span><strong>SNSやチラシがバラバラで効果が出ない</strong></a>
+                    <a href="#services" class="rl-issue-card"><span>Issue 03</span><strong>業務の手間や時間をなんとか減らしたい</strong></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Works -->
-    <section class="section bg-gray" id="works">
-        <div class="container">
-            <h2 class="section-title fade-in-up">Selected Works</h2>
-            <div class="works-grid" id="worksGrid"></div>
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="works/" class="btn btn-outline">View All Works</a>
+        <!-- Services -->
+        <section class="rl-section" id="services">
+            <div class="container">
+                <div class="rl-section-head fade-in-up">
+                    <div>
+                        <span class="rl-label">できること</span>
+                        <h2 class="rl-section-title">Service</h2>
+                    </div>
+                    <p>
+                        制作前の整理から公開後の集客・改善まで、必要な支援を組み合わせて伴走します。
+                    </p>
+                </div>
+
+                <div class="rl-service-layout">
+                    <article class="rl-service-feature fade-in-up">
+                        <span class="rl-label">Main Support</span>
+                        <h3>小さく始めて、<br>成果につながる流れを作る。</h3>
+                        <p>地域や業種に合わせて、ホームページ、SNS、広告、Googleマップ、AI活用を必要な分だけ組み合わせます。</p>
+                        <div class="rl-feature-visual" aria-hidden="true"></div>
+                    </article>
+
+                    <div class="rl-service-cards">
+                        <article class="rl-service-card fade-in-up"><span>HP</span><h3>ホームページ制作・改修</h3><p>強みや導線を整理し、問い合わせにつながるサイトへ。</p></article>
+                        <article class="rl-service-card fade-in-up"><span>LP</span><h3>LP制作</h3><p>サービスやキャンペーンの魅力を1ページに集約。</p></article>
+                        <article class="rl-service-card fade-in-up"><span>SNS</span><h3>SNS運用サポート</h3><p>投稿設計、画像作成、継続発信を伴走支援。</p></article>
+                        <article class="rl-service-card fade-in-up"><span>Map</span><h3>Googleマップ最適化</h3><p>地域検索や来店導線を見直し、見つけられやすく。</p></article>
+                        <article class="rl-service-card fade-in-up"><span>Ad</span><h3>広告運用サポート</h3><p>小さく試して、数字を見ながら改善します。</p></article>
+                        <article class="rl-service-card fade-in-up"><span>AI</span><h3>業務効率化・AI活用</h3><p>文章作成、手順整理、簡易ツール化で作業を軽く。</p></article>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Pricing Philosophy -->
-    <section class="section">
-        <div class="container narrow-container text-center">
-            <h2 class="section-title fade-in-up">Pricing</h2>
-            <div class="pricing-philosophy fade-in-up">
-                <h3>ご予算や状況に合わせて、<br>柔軟に。</h3>
-                <p class="cta-text text-responsive-center">
-                    決まったパッケージではなく、
-                    今必要なことを、必要な分だけご一緒します。
-                </p>
-                <a href="pricing/" class="btn btn-outline">料金等の詳細を見る</a>
+        <!-- Plans -->
+        <section class="rl-section rl-plans-section" id="plans">
+            <div class="container">
+                <div class="rl-section-head fade-in-up">
+                    <div>
+                        <span class="rl-label">選べるサポートプラン</span>
+                        <h2 class="rl-section-title">Plans</h2>
+                    </div>
+                    <p>
+                        ご相談内容や目的に合わせて、無理なく始められる月額サポートをご提案します。
+                    </p>
+                </div>
+                <div class="rl-plan-grid">
+                    <article class="rl-plan-card fade-in-up"><h3>ライトプラン</h3><p class="rl-price">30,000円〜 <small>/ 月</small></p><p>月1回の相談、簡単な改善提案、メール・LINEサポート。</p></article>
+                    <article class="rl-plan-card rl-featured fade-in-up"><h3>ベーシックプラン</h3><p class="rl-price">50,000円〜 <small>/ 月</small></p><p>更新・修正、改善提案、SNS・Googleマップサポート。</p></article>
+                    <article class="rl-plan-card fade-in-up"><h3>コンサル・運用プラン</h3><p class="rl-price">80,000円〜 <small>/ 月</small></p><p>戦略設計、施策実行、広告・分析・AI活用まで伴走。</p></article>
+                </div>
+                <div class="rl-center fade-in-up">
+                    <a href="pricing/" class="rl-btn rl-btn-outline">料金等の詳細を見る</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- News -->
-    <section class="section bg-gray">
-        <div class="container">
-            <h2 class="section-title fade-in-up">News</h2>
-            <div class="news-list" id="newsList"></div>
-            <div class="text-center" style="margin-top: 2rem;">
-                <a href="news/" class="btn btn-outline">Read More</a>
+        <!-- Flow -->
+        <section class="rl-section">
+            <div class="container">
+                <div class="rl-section-head fade-in-up">
+                    <div>
+                        <span class="rl-label">ご提案の流れ</span>
+                        <h2 class="rl-section-title">Flow</h2>
+                    </div>
+                    <p>
+                        初回のご相談から制作・運用改善まで、目的に合わせて段階的に進めていきます。
+                    </p>
+                </div>
+                <div class="rl-flow-grid fade-in-up">
+                    <article><b>1</b><h3>現状ヒアリング</h3><p>課題やご要望を確認します。</p></article>
+                    <article><b>2</b><h3>課題の整理・診断</h3><p>改善点を明確にします。</p></article>
+                    <article><b>3</b><h3>プラン設計</h3><p>目的に合わせて提案します。</p></article>
+                    <article><b>4</b><h3>制作・実装</h3><p>スピーディーに形にします。</p></article>
+                    <article><b>5</b><h3>運用・改善</h3><p>反応を見ながら整えます。</p></article>
+                    <article><b>6</b><h3>継続サポート</h3><p>長く伴走し成果を支えます。</p></article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA -->
-    <section class="section-lg text-center">
-        <div class="container fade-in-up">
-            <h2 class="section-title">Let's work together.</h2>
-            <p class="text-muted" style="margin-bottom: 2rem;">
-                まずはお気軽にご相談ください。<br>
-                現状の課題や、実現したい未来についてお話ししましょう。
-            </p>
-            <a href="contact/" class="btn">お問い合わせはこちら</a>
-        </div>
-    </section>
+        <!-- Works -->
+        <section class="rl-section rl-works-section" id="works">
+            <div class="container">
+                <div class="rl-section-head fade-in-up">
+                    <div>
+                        <span class="rl-label">実績</span>
+                        <h2 class="rl-section-title">Works</h2>
+                    </div>
+                    <p>ホームページ制作やデザインなど、これまでにお手伝いした実績をご紹介します。</p>
+                </div>
+                <div class="works-grid rl-top-works-grid" id="worksGrid"></div>
+                <div class="rl-center fade-in-up">
+                    <a href="works/" class="rl-btn rl-btn-outline">View All Works</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Summary -->
+        <section class="rl-section">
+            <div class="container">
+                <div class="rl-about-panel fade-in-up">
+                    <div class="rl-about-visual" aria-hidden="true"></div>
+                    <div>
+                        <span class="rl-label">Riseについて</span>
+                        <h2>想いを整理し、<br>伝わるカタチに。</h2>
+                        <p>
+                            福岡を拠点に、ホームページ制作やWebマーケティング、SNS運用支援、印刷物デザインを通して、お客様の「伝えたい想い」を形にします。理念や会社情報の詳細はAboutページにまとめています。
+                        </p>
+                        <a href="about/" class="rl-text-link">Aboutを見る</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News -->
+        <section class="rl-section rl-news-section" id="news">
+            <div class="container">
+                <div class="rl-section-head fade-in-up">
+                    <div>
+                        <span class="rl-label">お知らせ</span>
+                        <h2 class="rl-section-title">News</h2>
+                    </div>
+                    <p>制作や運用に役立つお知らせ、ノウハウ、日々の取り組みをお届けします。</p>
+                </div>
+                <div class="news-list rl-top-news-list" id="newsList"></div>
+                <div class="rl-center fade-in-up">
+                    <a href="news/" class="rl-btn rl-btn-outline">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="rl-contact-zone">
+            <div class="container">
+                <div class="rl-contact-card fade-in-up">
+                    <div>
+                        <span class="rl-label">お問い合わせ・無料相談</span>
+                        <h2>Contact</h2>
+                    </div>
+                    <p>
+                        内容が固まっていなくても大丈夫です。現状の課題整理や改善のヒントだけでも、お気軽にご相談ください。
+                    </p>
+                    <a href="contact/" class="rl-square-link" aria-label="お問い合わせへ">+</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
