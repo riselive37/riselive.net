@@ -188,6 +188,22 @@ const renderWorks = (contents, containerId) => {
 // Store works data globally for filtering
 let allWorksData = [];
 
+const scrollToNewsDetail = (target) => {
+    if (!target) return;
+
+    requestAnimationFrame(() => {
+        const header = document.getElementById('header');
+        const headerHeight = header ? header.getBoundingClientRect().height : 0;
+        const offset = headerHeight + 24;
+        const targetTop = window.pageYOffset + target.getBoundingClientRect().top - offset;
+
+        window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: 'auto',
+        });
+    });
+};
+
 const renderNewsDetailContent = (id, data) => {
     const detailContainer = document.getElementById('newsDetail');
     const listContainer = document.getElementById('newsList');
@@ -209,6 +225,7 @@ const renderNewsDetailContent = (id, data) => {
         if (listContainer) listContainer.style.display = 'none';
         detailContainer.style.display = 'block';
         if (pagination) pagination.style.display = 'none';
+        scrollToNewsDetail(detailContainer);
         return;
     }
 
@@ -237,8 +254,7 @@ const renderNewsDetailContent = (id, data) => {
     if (pagination) pagination.style.display = 'none';
     detailContainer.style.display = 'block';
 
-    // Smooth scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToNewsDetail(detailContainer);
 };
 
 // Auto-run on page load
