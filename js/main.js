@@ -50,14 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (contactForm && formSuccessMessage) {
         contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Stop default navigation/reload
-
-            const formData = new FormData(contactForm);
             const action = contactForm.getAttribute('action');
             const formProvider = contactForm.dataset.formProvider || 'google';
 
-            // Basic validation
             if (!action || action === '#') {
+                e.preventDefault();
                 alert('フォームの送信先設定を確認してください。');
                 return;
             }
@@ -85,10 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             if (formProvider === 'google') {
-                contactForm.submit();
+                // Let the browser perform HTML validation, then submit natively to the hidden iframe.
                 setTimeout(showSuccess, 1000);
                 return;
             }
+
+            e.preventDefault();
+            const formData = new FormData(contactForm);
 
             try {
                 const response = await fetch(action, {
