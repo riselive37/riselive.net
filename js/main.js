@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll('.fade-in-up');
     animatedElements.forEach(el => observer.observe(el));
 
-    // Contact Form Handler (AJAX Submission)
+    // Contact Form Handler
     const contactForm = document.getElementById('contactForm');
     const formSuccessMessage = document.getElementById('formSuccessMessage');
 
@@ -54,10 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const formData = new FormData(contactForm);
             const action = contactForm.getAttribute('action');
+            const formProvider = contactForm.dataset.formProvider || 'google';
 
             // Basic validation
-            if (!action || action === '#' || action.includes('{your-form-id}')) {
-                alert('【設定が必要です】\nコード内の action="..." の部分にご自身のFormspree URLを設定してください。');
+            if (!action || action === '#') {
+                alert('フォームの送信先設定を確認してください。');
                 return;
             }
 
@@ -65,6 +66,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalBtnText = submitBtn.textContent;
             submitBtn.textContent = '送信中...';
             submitBtn.disabled = true;
+
+            const showSuccess = () => {
+                contactForm.style.display = 'none';
+                formSuccessMessage.style.display = 'block';
+
+                const headerOffset = 100;
+                const elementPosition = formSuccessMessage.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+
+                setTimeout(() => {
+                    formSuccessMessage.classList.add('visible');
+                }, 10);
+            };
+
+            if (formProvider === 'google') {
+                contactForm.submit();
+                setTimeout(showSuccess, 1000);
+                return;
+            }
 
             try {
                 const response = await fetch(action, {
@@ -76,22 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (response.ok) {
-                    // Success: Hide form, show message
-                    contactForm.style.display = 'none';
-                    formSuccessMessage.style.display = 'block';
-
-                    // Smooth scroll to message
-                    const headerOffset = 100;
-                    const elementPosition = formSuccessMessage.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
-                    });
-
-                    setTimeout(() => {
-                        formSuccessMessage.classList.add('visible');
-                    }, 10);
+                    showSuccess();
                 } else {
                     // Server error
                     const data = await response.json();

@@ -1,6 +1,6 @@
 ---
 name: riselive-site-maintenance
-description: Maintain and extend the RiseLive/Rise static website in this repository. Use when Codex works on this site’s HTML/CSS/JS pages, rl-* design system, SEO metadata, microCMS Works/News rendering, Formspree contact form, static hosting links, or repository-specific validation and release checks.
+description: Maintain and extend the RiseLive/Rise static website in this repository. Use when Codex works on this site’s HTML/CSS/JS pages, rl-* design system, SEO metadata, microCMS Works/News rendering, Googleフォーム contact form, static hosting links, or repository-specific validation and release checks.
 ---
 
 # RiseLive Site Maintenance
@@ -9,7 +9,7 @@ description: Maintain and extend the RiseLive/Rise static website in this reposi
 
 1. Inspect the relevant page(s), `css/style.css`, and any affected script before editing.
 2. Preserve the renewed `rl-*` design system from Top/About unless the user explicitly asks for legacy styling.
-3. Keep external integrations working: microCMS for Works/News, Formspree for Contact, Google Analytics, `CNAME`, and `sitemap.xml`.
+3. Keep external integrations working: microCMS for Works/News, Googleフォーム for Contact, Google Analytics, `CNAME`, and `sitemap.xml`.
 4. Edit only the requested scope. Top and About are design baselines; avoid touching them during lower-page work unless necessary.
 5. Run the validation commands in this skill before reporting completion.
 
@@ -29,7 +29,7 @@ Primary pages:
 - `about/index.html`: renewed About page and lower-page design baseline.
 - `pricing/index.html`, `works/index.html`, `news/index.html`, `contact/index.html`: service lower pages.
 - `css/style.css`: legacy styles plus renewed `rl-*` system.
-- `js/main.js`: header, mobile menu, fade-in animation, Formspree AJAX.
+- `js/main.js`: header, mobile menu, fade-in animation, Googleフォーム.
 - `js/cms.js`: microCMS fetch/render logic for Works and News, demo fallbacks, News detail mode.
 
 ## Implementation Rules
@@ -44,7 +44,7 @@ Primary pages:
   - Contact form: `#contactForm`
   - Contact success panel: `#formSuccessMessage`
 - Keep static Works/News fallback markup unless replacing it with equivalent fallback behavior.
-- Keep Contact form `action="https://formspree.io/f/mwveldwq"` unless the user gives a new endpoint.
+- Keep Contact form `action="https://docs.google.com/forms/d/e/1FAIpQLSedXkcHGdmCRGb8t5eY68LZmTVNx4PsfoFbOQnrfdir5HZmxw/formResponse"` unless the user gives a new endpoint.
 - Keep links directory-based (`../contact/`, `works/`) for published pages unless explicitly preparing a local-file-only build.
 - Do not expose, rotate, or alter API keys unless the user specifically requests an integration change.
 

@@ -11,7 +11,7 @@ Rise/RiseLive is a Japanese static website for a small web production and market
 - Plain JavaScript in `js/main.js` and `js/cms.js`.
 - Google Fonts: Inter and Noto Sans JP.
 - microCMS client-side fetch for Works and News.
-- Formspree AJAX submission for Contact.
+- Googleフォーム submission for Contact.
 - Google Analytics tag `G-DHMC1N46T3`.
 - Static hosting indicator: `CNAME` and `sitemap.xml`.
 
@@ -41,7 +41,7 @@ Rise/RiseLive is a Japanese static website for a small web production and market
 - `news/index.html`: news list and detail container using `#newsList` and `#newsDetail`.
 - `contact/index.html`: contact page using `#contactForm` and `#formSuccessMessage`.
 - `css/style.css`: global reset, legacy classes, footer/header, renewed `rl-*` design system, lower-page styles.
-- `js/main.js`: scroll header, mobile nav, fade-in observer, Formspree AJAX handler.
+- `js/main.js`: scroll header, mobile nav, fade-in observer, Googleフォーム handler.
 - `js/cms.js`: microCMS config, fetch helpers, Works renderer, News renderer/detail renderer, filters, pagination, demo News fallback.
 - `images/`: `logo.png`, `favicon.ico`, `apple-touch-icon.png`.
 - `skills/riselive-site-maintenance/`: this Codex Skill.
@@ -53,7 +53,7 @@ Rise/RiseLive is a Japanese static website for a small web production and market
 - Pricing: pricing policy, monthly support plans, service menu, good-fit issues, flow, FAQ, CTA.
 - Works: CMS-first portfolio grid with static fallback, filters, support range, CTA.
 - News: CMS-first news list with static fallback, visual category pills, detail mode with `?id=...`, CTA.
-- Contact: conversion page with contact options, Formspree form, reassurance, after-sending flow, company info.
+- Contact: conversion page with contact options, Googleフォーム form, reassurance, after-sending flow, company info.
 
 ## External Integrations
 
@@ -73,12 +73,12 @@ Renderer tolerance:
 - News body fields: `content` or `body`.
 - Demo detail IDs: `demo_renewal`, `demo_work1`, `demo_work2`, `demo_column`, `demo_start`.
 
-### Formspree
+### Googleフォーム
 
 `contact/index.html` posts to:
 
 ```html
-https://formspree.io/f/mwveldwq
+https://docs.google.com/forms/d/e/1FAIpQLSedXkcHGdmCRGb8t5eY68LZmTVNx4PsfoFbOQnrfdir5HZmxw/formResponse
 ```
 
 `js/main.js` intercepts submit, sends `fetch(action, { method: 'POST', body: formData, headers: { Accept: 'application/json' } })`, hides the form, and shows `#formSuccessMessage` on success.

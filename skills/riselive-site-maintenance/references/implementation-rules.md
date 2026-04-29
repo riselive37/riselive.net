@@ -92,17 +92,17 @@ When adding/removing pages:
 - Do not remove demo News fallback IDs; they are useful for local detail checks.
 - Do not log sensitive CMS values or rotate keys unless the user asks.
 
-### Formspree
+### Googleフォーム
 
-- Preserve `#contactForm`, `#formSuccessMessage`, method `POST`, and the current Formspree action unless the user provides a replacement.
+- Preserve `#contactForm`, `#formSuccessMessage`, method `POST`, and the current Googleフォーム action unless the user provides a replacement.
 - Do not submit real form inquiries during QA without explicit user confirmation.
-- Verify form wiring by checking DOM attributes and JS behavior, not by sending test messages to Formspree unless approved.
+- Verify form wiring by checking DOM attributes and JS behavior, not by sending test messages to Googleフォーム unless approved.
 
 ## Prohibited Changes
 
 - Do not replace the static site with a framework without explicit user approval.
 - Do not delete or rewrite CMS fallback content without preserving fallback behavior.
-- Do not remove Google Analytics, Formspree, microCMS, `CNAME`, or `sitemap.xml` unless asked.
+- Do not remove Google Analytics, Googleフォーム, microCMS, `CNAME`, or `sitemap.xml` unless asked.
 - Do not run `fix_links.py` or `revert_links.py` as a casual formatting step; they rewrite all HTML links.
 - Do not revert user changes in a dirty worktree.
 - Do not touch legacy/backup files (`index2.html`, `style2.css`, `index.html.zip`) unless the user specifically scopes them in.

@@ -57,7 +57,7 @@
 ## Contact Form Update
 
 1. Preserve `id="contactForm"` and `id="formSuccessMessage"`.
-2. Preserve Formspree action unless the user provides a new endpoint.
+2. Preserve Googleフォーム action unless the user provides a new endpoint.
 3. Keep labels, input IDs, names, and required attributes aligned.
 4. Check `js/main.js` still finds the submit button and success panel.
 5. Do not submit a real message without action-time user confirmation.

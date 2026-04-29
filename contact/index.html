@@ -120,33 +120,34 @@
                     </div>
 
                     <div>
-                        <form class="contact-form fade-in-up" id="contactForm" action="https://formspree.io/f/mwveldwq"
-                            method="POST">
+                        <form class="contact-form fade-in-up" id="contactForm"
+                            action="https://docs.google.com/forms/d/e/1FAIpQLSedXkcHGdmCRGb8t5eY68LZmTVNx4PsfoFbOQnrfdir5HZmxw/formResponse"
+                            method="POST" target="googleFormFrame" data-form-provider="google">
                             <div class="form-group">
                                 <label for="company" class="form-label">御社名 / 屋号</label>
-                                <input type="text" id="company" name="company" class="form-control" placeholder="例）Rise商店">
+                                <input type="text" id="company" name="entry.437180940" class="form-control" placeholder="例）Rise商店">
                             </div>
                             <div class="form-group">
                                 <label for="name" class="form-label required">お名前</label>
-                                <input type="text" id="name" name="name" class="form-control" required placeholder="例）山田 太郎">
+                                <input type="text" id="name" name="entry.1744271345" class="form-control" required placeholder="例）山田 太郎">
                             </div>
                             <div class="form-group">
                                 <label for="email" class="form-label required">メールアドレス</label>
-                                <input type="email" id="email" name="email" class="form-control" required
+                                <input type="email" id="email" name="entry.1222709491" class="form-control" required
                                     placeholder="例）info@example.com">
                             </div>
                             <div class="form-group">
                                 <label for="tel" class="form-label">電話番号</label>
-                                <input type="tel" id="tel" name="tel" class="form-control" placeholder="例）050-0000-0000">
+                                <input type="tel" id="tel" name="entry.1490200769" class="form-control" placeholder="例）050-0000-0000">
                             </div>
                             <div class="form-group">
                                 <label for="subject" class="form-label required">ご相談内容</label>
-                                <select id="subject" name="subject" class="form-control" required>
+                                <select id="subject" name="entry.1459953426" class="form-control" required>
                                     <option value="">選択してください</option>
                                     <option value="Webサイト制作・改修">Webサイト制作・改修</option>
                                     <option value="LP制作">LP制作</option>
                                     <option value="SNS運用">SNS運用</option>
-                                    <option value="Googleマップ・広告">Googleマップ・広告</option>
+                                    <option value="Googlemap・広告">Googleマップ・広告</option>
                                     <option value="AI活用・業務改善">AI活用・業務改善</option>
                                     <option value="印刷物・DTP">印刷物・DTP</option>
                                     <option value="その他">その他</option>
@@ -154,18 +155,18 @@
                             </div>
                             <div class="form-group">
                                 <label for="budget" class="form-label">ご予算</label>
-                                <select id="budget" name="budget" class="form-control">
+                                <select id="budget" name="entry.995478391" class="form-control">
                                     <option value="未定">未定</option>
-                                    <option value="〜10万円">〜10万円</option>
-                                    <option value="10〜30万円">10〜30万円</option>
-                                    <option value="30〜50万円">30〜50万円</option>
-                                    <option value="50万円〜">50万円〜</option>
+                                    <option value="～10万円">〜10万円</option>
+                                    <option value="10～30万円">10〜30万円</option>
+                                    <option value="30～50万円">30〜50万円</option>
+                                    <option value="50万円～">50万円〜</option>
                                     <option value="月額サポートを相談したい">月額サポートを相談したい</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="message" class="form-label required">お問い合わせ内容</label>
-                                <textarea id="message" name="message" class="form-control" required
+                                <textarea id="message" name="entry.219151659" class="form-control" required
                                     placeholder="例）既存サイトを見直したいです。問い合わせを増やしたいのですが、何から始めるべきか相談したいです。"></textarea>
                             </div>
 
@@ -173,6 +174,7 @@
                                 <button type="submit" class="rl-btn">送信する</button>
                             </div>
                         </form>
+                        <iframe class="rl-hidden-frame" name="googleFormFrame" title="Googleフォーム送信用"></iframe>
 
                         <div id="formSuccessMessage" class="rl-success-panel fade-in-up">
                             <span class="rl-label">送信完了</span>

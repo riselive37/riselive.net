@@ -145,8 +145,11 @@ def check_contact_form() -> list[str]:
     form = forms[0]
     if form.get("method", "").upper() != "POST":
         errors.append("contact/index.html: #contactForm method must be POST")
-    if form.get("action") != "https://formspree.io/f/mwveldwq":
-        errors.append("contact/index.html: unexpected Formspree action")
+    expected_action = "https://docs.google.com/forms/d/e/1FAIpQLSedXkcHGdmCRGb8t5eY68LZmTVNx4PsfoFbOQnrfdir5HZmxw/formResponse"
+    if form.get("action") != expected_action:
+        errors.append("contact/index.html: unexpected Google Forms action")
+    if form.get("target") != "googleFormFrame":
+        errors.append("contact/index.html: #contactForm target must be googleFormFrame")
     return errors
 
 
