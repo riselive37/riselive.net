@@ -47,8 +47,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // Contact Form Handler
     const contactForm = document.getElementById('contactForm');
     const formSuccessMessage = document.getElementById('formSuccessMessage');
+    const googleFormFrame = document.querySelector('iframe[name="googleFormFrame"]');
 
     if (contactForm && formSuccessMessage) {
+        let googleFormSubmitted = false;
+
+        if (googleFormFrame) {
+            googleFormFrame.addEventListener('load', () => {
+                if (!googleFormSubmitted) {
+                    return;
+                }
+                showSuccess();
+                googleFormSubmitted = false;
+            });
+        }
+
+        const showSuccess = () => {
+            contactForm.style.display = 'none';
+            formSuccessMessage.style.display = 'block';
+
+            const headerOffset = 100;
+            const elementPosition = formSuccessMessage.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+
+            setTimeout(() => {
+                formSuccessMessage.classList.add('visible');
+            }, 10);
+        };
+
         contactForm.addEventListener('submit', async (e) => {
             const action = contactForm.getAttribute('action');
             const formProvider = contactForm.dataset.formProvider || 'google';
@@ -64,26 +94,15 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.textContent = '送信中...';
             submitBtn.disabled = true;
 
-            const showSuccess = () => {
-                contactForm.style.display = 'none';
-                formSuccessMessage.style.display = 'block';
-
-                const headerOffset = 100;
-                const elementPosition = formSuccessMessage.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
-
-                setTimeout(() => {
-                    formSuccessMessage.classList.add('visible');
-                }, 10);
-            };
-
             if (formProvider === 'google') {
                 // Let the browser perform HTML validation, then submit natively to the hidden iframe.
-                setTimeout(showSuccess, 1000);
+                googleFormSubmitted = true;
+                setTimeout(() => {
+                    if (googleFormSubmitted) {
+                        showSuccess();
+                        googleFormSubmitted = false;
+                    }
+                }, 3000);
                 return;
             }
 
