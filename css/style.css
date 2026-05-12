@@ -778,14 +778,16 @@ textarea.form-control {
 /* News Detail Body Styling */
 .news-body {
     font-size: var(--text-base);
-    line-height: 1.8;
+    line-height: 1.85;
 }
 
 .news-body p {
-    margin-bottom: 1.5em;
-    /* Restore margin for paragraphs */
+    margin: 0 0 0.75em;
     white-space: pre-wrap;
-    /* Ensure line breaks in plain text or text areas are respected */
+}
+
+.news-body p:empty {
+    margin-bottom: 1.4em;
 }
 
 /* Headings in news content */
@@ -2796,7 +2798,7 @@ textarea.form-control {
 
 .news-body {
     color: var(--rl-ink);
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .news-detail-actions {
