@@ -2883,6 +2883,16 @@ textarea.form-control {
     box-shadow: 0 18px 52px rgba(6, 26, 51, .08);
 }
 
+.form-spam-check {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
 .form-label {
     color: var(--rl-navy);
     font-weight: 800;
