@@ -6,7 +6,7 @@
  */
 
 const CMS_CONFIG = {
-    apiKey: 'HZQRqDOnP5ah2jZkqAhUpgoMYMCzxYtss7LA',
+    apiKey: 'cfDFxXwDw8tZF5ec605FIXOOLHOiNJ5v5XcT',
     serviceDomain: 'riselive', // Please enter your Service ID here
 };
 
