@@ -2154,6 +2154,35 @@ textarea.form-control {
     color: #fff;
 }
 
+.rl-value-main p {
+    margin-top: 22px;
+    color: rgba(255, 255, 255, .82);
+}
+
+.rl-value-values {
+    grid-column: 1 / -1;
+}
+
+.rl-value-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.rl-value-detail + .rl-value-detail {
+    padding-left: 28px;
+    border-left: 1px solid var(--rl-line);
+}
+
+.rl-value-detail h3 {
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.rl-value-spirits {
+    grid-column: span 2;
+}
+
 .rl-value-slogan {
     background: var(--rl-pink-soft);
 }
@@ -2240,6 +2269,22 @@ textarea.form-control {
 
     .rl-value-main {
         grid-column: auto;
+    }
+
+    .rl-value-values,
+    .rl-value-spirits {
+        grid-column: auto;
+    }
+
+    .rl-value-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rl-value-detail + .rl-value-detail {
+        padding-top: 24px;
+        padding-left: 0;
+        border-top: 1px solid var(--rl-line);
+        border-left: 0;
     }
 }
 
