@@ -1,0 +1,6 @@
+interface:
+  display_name: "Dashboard Design Guidebook"
+  short_description: "見やすいダッシュボード設計とレビュー"
+  default_prompt: "Use $dashboard-design-guidebook to design or review a dashboard with clear requirements, chart choices, layout, color, and accessibility checks."
+policy:
+  allow_implicit_invocation: true

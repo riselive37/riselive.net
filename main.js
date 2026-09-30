@@ -44,48 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll('.fade-in-up');
     animatedElements.forEach(el => observer.observe(el));
 
-    // Contact Form Handler
+    // Contact Form Handler (AJAX Submission)
     const contactForm = document.getElementById('contactForm');
     const formSuccessMessage = document.getElementById('formSuccessMessage');
-    const googleFormFrame = document.querySelector('iframe[name="googleFormFrame"]');
 
     if (contactForm && formSuccessMessage) {
-        let googleFormSubmitted = false;
-
-        if (googleFormFrame) {
-            googleFormFrame.addEventListener('load', () => {
-                if (!googleFormSubmitted) {
-                    return;
-                }
-                showSuccess();
-                googleFormSubmitted = false;
-            });
-        }
-
-        const showSuccess = () => {
-            contactForm.style.display = 'none';
-            formSuccessMessage.style.display = 'block';
-
-            const headerOffset = 100;
-            const elementPosition = formSuccessMessage.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
-
-            setTimeout(() => {
-                formSuccessMessage.classList.add('visible');
-            }, 10);
-        };
-
         contactForm.addEventListener('submit', async (e) => {
-            const action = contactForm.getAttribute('action');
-            const formProvider = contactForm.dataset.formProvider || 'google';
+            e.preventDefault(); // Stop default navigation/reload
 
-            if (!action || action === '#') {
-                e.preventDefault();
-                alert('フォームの送信先設定を確認してください。');
+            const formData = new FormData(contactForm);
+            const action = contactForm.getAttribute('action');
+
+            // Basic validation
+            if (!action || action === '#' || action.includes('{your-form-id}')) {
+                alert('【設定が必要です】\nコード内の action="..." の部分にご自身のFormspree URLを設定してください。');
                 return;
             }
 
@@ -93,21 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalBtnText = submitBtn.textContent;
             submitBtn.textContent = '送信中...';
             submitBtn.disabled = true;
-
-            if (formProvider === 'google') {
-                // Let the browser perform HTML validation, then submit natively to the hidden iframe.
-                googleFormSubmitted = true;
-                setTimeout(() => {
-                    if (googleFormSubmitted) {
-                        showSuccess();
-                        googleFormSubmitted = false;
-                    }
-                }, 3000);
-                return;
-            }
-
-            e.preventDefault();
-            const formData = new FormData(contactForm);
 
             try {
                 const response = await fetch(action, {
@@ -119,7 +76,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (response.ok) {
-                    showSuccess();
+                    // Success: Hide form, show message
+                    contactForm.style.display = 'none';
+                    formSuccessMessage.style.display = 'block';
+
+                    // Smooth scroll to message
+                    const headerOffset = 100;
+                    const elementPosition = formSuccessMessage.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+
+                    setTimeout(() => {
+                        formSuccessMessage.classList.add('visible');
+                    }, 10);
                 } else {
                     // Server error
                     const data = await response.json();
